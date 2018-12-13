@@ -1,0 +1,85 @@
+﻿@model BBKBootCamp.Models.Solicitante
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Solicitante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoElectronico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CorreoElectronico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SexoTipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SexoTipo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta4)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta5)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta5)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta6)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta6)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

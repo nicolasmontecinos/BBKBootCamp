@@ -1,0 +1,142 @@
+﻿@model BBKBootCamp.Models.Solicitante
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Create</h2>*@
+
+<h4>!!APUNTATE PARA PARTICIPAR EN BBK BOOTCAMP!!</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CorreoElectronico" class="control-label"></label>
+                <input asp-for="CorreoElectronico" class="form-control" />
+                <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SexoTipo" class="control-label"></label>
+                @*<input asp-for="SexoTipo" class="form-control" />
+            <span asp-validation-for="SexoTipo" class="text-danger"></span>*@
+                <select asp-for="SexoTipo" class="dropdown">
+                    <option value="Mujer">Mujer</option>
+                    <option value="Hombre">Hombre</option>
+                </select>
+                <span asp-validation-for="SexoTipo" class="text-danger"></span>
+            </div>
+
+            <p>¿Entiendes que el coding bootcamp se realiza a tiempo completo durante 12 semanas, de 9 a 19 horas de lunes a viernes? </p>
+            <div class="form-group">
+                <label asp-for="Pregunta1" class="control-label"></label>
+                @*<input asp-for="Pregunta1" class="form-control" />
+            <span asp-validation-for="Pregunta1" class="text-danger"></span>*@
+                <select asp-for="Pregunta1" class="dropdown">
+                    <option value="SI">SI</option>
+                    <option value="NO">NO</option>
+                </select>
+                <span asp-validation-for="Pregunta1" class="text-danger"></span>
+            </div>
+
+            <p>¿Cuál es tu nivel de educación? (Si empezaste la universidad pero no terminaste, selecciona ‘Grado Universitario’). </p>
+            <div class="form-group">
+                <label asp-for="Pregunta2" class="control-label"></label>
+                @*<input asp-for="Pregunta2" class="form-control" />
+            <span asp-validation-for="Pregunta2" class="text-danger"></span>*@
+                <select asp-for="Pregunta2" class="dropdown">
+                    <option value="Educacion Primaria">Educacion Primaria</option>
+                    <option value="Educacion Secundaria">Educacion Secundaria</option>
+                    <option value="Bachillerato">Bachillerato</option>
+                    <option value="Ciclo Formativo Grado MEDIO/SUPERIOR">Ciclo Formativo Grado MEDIO/SUPERIOR</option>
+                    <option value="Grado Universitario">Grado Universitario</option>
+                    <option value="Post-Grado">Post-Grado</option>
+                    <option value="Otros">Otros</option>
+                </select>
+                <span asp-validation-for="Pregunta2" class="text-danger"></span>
+            </div>
+
+            <p>¿Cuál ha sido tu principal área de estudio o el nombre de tu carrera/FP? </p>
+            <div class="form-group">
+                <label asp-for="Pregunta3" class="control-label"></label>
+                <input asp-for="Pregunta3" class="form-control" />
+                <span asp-validation-for="Pregunta3" class="text-danger"></span>
+            </div>
+
+            <p> ¿Por qué quieres apuntarte al Bootcamp? (mínimo 200 caracteres)</p>
+            <div class="form-group">
+                <label asp-for="Pregunta4" class="control-label"></label>
+                <input asp-for="Pregunta4" class="form-control" />
+                <span asp-validation-for="Pregunta4" class="text-danger"></span>
+            </div>
+
+
+            <p> ¿Cuál es tu nivel de inglés?</p>
+            <div class="form-group">
+                <label asp-for="Pregunta5" class="control-label"></label>
+                @*<input asp-for="Pregunta5" class="form-control" />
+            <span asp-validation-for="Pregunta5" class="text-danger"></span>*@
+                <select asp-for="Pregunta5" class="dropdown">
+                    <option value="No se Inglés">No se Inglés</option>
+                    <option value="Conocimiento Basico">Conocimiento Basico</option>
+                    <option value="Conocimiento Intermedio">Conocimiento Intermedio</option>
+                    <option value="Conocimiento Avanzado">Conocimiento Avanzado</option>
+                </select>
+                <span asp-validation-for="Pregunta5" class="text-danger"></span>
+            </div>
+
+            <p>Como conociste el BBK BootCamp</p>
+            <div class="form-group">
+                <label asp-for="Pregunta6" class="control-label"></label>
+                @*<input asp-for="Pregunta6" class="form-control" />
+            <span asp-validation-for="Pregunta6" class="text-danger"></span>*@
+                <select asp-for="Pregunta6" class="dropdown">
+                    <option value="Redes Sociales">Redes Sociales</option>
+                    <option value="Prensa, Radio, Tv">Prensa, Radio, Tv</option>
+                    <option value="Pagina Web Fundacion BBK BootCamp">Pagina Web Fundacion BBK BootCamp</option>
+                    <option value="Familiar, Conocido, Amigo">Familiar, Conocido, Amigo</option>
+                    <option value="Otros">Otros</option>
+                </select>
+                <span asp-validation-for="Pregunta6" class="text-danger"></span>
+            </div>
+
+            <p></p>
+
+            @*<div class="form-group">
+                <select asp-for="Proceso" class="dropdown">
+                    <option value="En Espera">En Espera</option>
+                    <option value="Entrevista Concertada">Entrevista Concertada</option>
+                </select>
+                <span asp-validation-for="Proceso" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Listo" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,90 @@
+﻿@model BBKBootCamp.Models.TablaDeEntrevista
+
+
+@inject BBKBootCamp.Servicios.TablaTransitoria TablaTransitoria
+@inject BBKBootCamp.Models.Solicitante Solicitante
+
+@inject BBKBootCamp.Models.UsuarioInterno UsuarioInterno
+@inject BBKBootCamp.Models.HoraDisponible HoraDisponible
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>TablaDeEntrevista</h4>
+
+@{
+    List<Solicitante> Solicitantes = TablaTransitoria.GetSolicitantesDB().ToList();
+}
+@{
+    List<HoraDisponible> HoraDisponibles = TablaTransitoria.GetHoraDisponiblesDB().ToList(); //ARREGLAR ESTO/////
+}
+@{
+    List<UsuarioInterno> UsuarioInternos = TablaTransitoria.GetUsuarioInternosDB().ToList();///////PRUEBA PARA VINCULAR USUARIOS Y ENTREVISTAS/////
+}
+@{
+    List<TablaDeEntrevista> TablaDeEntrevistas = new List<TablaDeEntrevista>();
+}
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+
+
+                <p>Selecciona un solicitante</p>
+                <select name="idSolicitante" asp-for="Solicitante" class="dropdown">
+                    @foreach (Solicitante x in Solicitantes)
+                    {
+                        <option value="@x.Id">@x.Nombre, @x.Apellido,@x.SexoTipo, @x.CorreoElectronico</option>
+                    }
+                </select>
+                <br />
+                <p>Elige una hora</p>
+                <select name="idHoraDisponible" asp-for="HoraDisponible" class="dropdown">
+                    @foreach (HoraDisponible x in HoraDisponibles)
+                    {
+                        @if (x.Estado != "Ocupada")
+                        {
+                            <option value="@x.Id">@x.FechaHora</option>
+                        }
+                    }
+                </select>
+                <br />
+                <p>Selecciona un entrevistador</p>
+                <select name="idEntrevistadora" asp-for="Entrevistadora" class="dropdown">
+                    @foreach (UsuarioInterno x in UsuarioInternos)
+                    {
+                        if (x.Email != "carla@hotmail.com")
+                        {
+                            <option value="@x.Id">@x.Nombre</option>
+                        }
+                    }
+                </select>
+
+                <p>Estado candidatura de Solicitante</p>
+                <div class="form-group">
+                    <label asp-for="Estado" class="control-label"></label>
+                    <select asp-for="Estado" class="dropdown">
+                        <option value="En proceso">En proceso</option>
+                        <option value="Seleccionado">Seleccionado</option>
+                        <option value="Descartado">Descartado</option>
+                    </select>
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+
+                <input type="submit" value="Guardar cambios" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

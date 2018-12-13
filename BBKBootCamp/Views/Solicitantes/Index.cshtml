@@ -1,0 +1,96 @@
+﻿@model IEnumerable<BBKBootCamp.Models.Solicitante>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CorreoElectronico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SexoTipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pregunta1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pregunta2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pregunta3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pregunta4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pregunta5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pregunta6)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorreoElectronico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SexoTipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pregunta1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pregunta2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pregunta3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pregunta4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pregunta5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pregunta6)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Modificar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

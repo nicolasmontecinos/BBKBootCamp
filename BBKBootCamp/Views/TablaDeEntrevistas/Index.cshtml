@@ -1,0 +1,86 @@
+﻿@model IEnumerable<BBKBootCamp.Models.TablaDeEntrevista>
+
+@inject BBKBootCamp.Models.UsuarioInterno UsuarioInterno
+@inject BBKBootCamp.Servicios.TablaTransitoria TablaTransitoria
+
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ESPACIO ENTREVISTAS</h2>
+
+<p>
+    <a asp-action="Create">Añade una nueva entrevista</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrevistadora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Solicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Solicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Solicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Solicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraDisponible)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entrevistadora.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Solicitante.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Solicitante.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Solicitante.SexoTipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Solicitante.CorreoElectronico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraDisponible.FechaHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Modificar candidatura</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar candidatura</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
