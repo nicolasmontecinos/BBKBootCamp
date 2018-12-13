@@ -67,7 +67,7 @@ namespace BBKBootCamp.Controllers
             mail.Body = htmlBody;
             SmtpServer.Port = 587;
             SmtpServer.UseDefaultCredentials = false;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("nicolas-m-s@hotmail.com", "n1c0l45-m0nt3");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("nicolas-m-s@hotmail.com", "pasword");
             SmtpServer.EnableSsl = true;
             SmtpServer.Send(mail);
             ////////ES UNA PRUEBA PARA EL ENVIO AUTOMATICO DE CORREO//////
